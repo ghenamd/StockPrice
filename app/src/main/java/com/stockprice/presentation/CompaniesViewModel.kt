@@ -1,5 +1,6 @@
 package com.stockprice.presentation
 
+import android.util.Log
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
@@ -21,6 +22,10 @@ class CompaniesViewModel @Inject constructor(
 
     var state by mutableStateOf(CompanyState())
     private var searchJob: Job? = null
+
+    init {
+        getCompanies()
+    }
 
     fun onEvent(event: CompanyEvent) {
         when (event) {
