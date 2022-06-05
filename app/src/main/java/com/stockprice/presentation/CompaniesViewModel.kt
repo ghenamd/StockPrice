@@ -1,6 +1,5 @@
 package com.stockprice.presentation
 
-import android.util.Log
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
@@ -44,7 +43,6 @@ class CompaniesViewModel @Inject constructor(
         }
     }
 
-
     private fun getCompanies(
         query: String = state.searchQuery.lowercase(),
         fetchRemotely: Boolean = false
@@ -59,7 +57,6 @@ class CompaniesViewModel @Inject constructor(
                             }
                         }
                         is Response.Error -> {
-
                         }
                         is Response.Loading -> {
                             state = state.copy(isLoading = result.isLoading)

@@ -14,7 +14,6 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.create
 import javax.inject.Singleton
 
-
 @Module
 @InstallIn(SingletonComponent::class)
 object AppModule {
@@ -35,5 +34,4 @@ object AppModule {
         return Room.databaseBuilder(context, StockDatabase::class.java, "stock.db")
             .build()
     }
-
 }

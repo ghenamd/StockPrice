@@ -13,7 +13,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.stockprice.domain.model.Company
 
-
 @Composable
 fun CompanyItem(
     company: Company,

@@ -15,7 +15,6 @@ import com.stockprice.ui.theme.DarkBlue
 import com.stockprice.ui.theme.StockPriceTheme
 import dagger.hilt.android.AndroidEntryPoint
 
-
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 

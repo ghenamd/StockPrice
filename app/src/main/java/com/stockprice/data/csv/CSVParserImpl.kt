@@ -9,7 +9,6 @@ import java.io.InputStreamReader
 import javax.inject.Inject
 import javax.inject.Singleton
 
-
 @Singleton
 class CSVParserImpl @Inject constructor() : CSVParser<Company> {
 

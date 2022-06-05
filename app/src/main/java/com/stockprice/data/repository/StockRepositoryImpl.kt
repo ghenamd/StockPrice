@@ -34,7 +34,7 @@ class StockRepositoryImpl @Inject constructor(
             val remoteCompanies = try {
                 val response = api.getStocks()
                 val stream = response.byteStream()
-                 parser.parse(stream)
+                parser.parse(stream)
             } catch (e: Exception) {
                 emit(Response.Error("Failed to fetch data"))
                 null

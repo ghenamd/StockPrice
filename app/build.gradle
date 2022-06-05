@@ -107,3 +107,11 @@ dependencies {
     ksp 'io.github.raamcosta.compose-destinations:ksp:1.5.9-beta'
 
 }
+
+ktlint {
+    android = true
+    disabledRules = ["import-ordering", "max-line-length", "indent", "no-wildcard-imports"]
+    filter {
+        exclude("**/generated/**")
+    }
+}

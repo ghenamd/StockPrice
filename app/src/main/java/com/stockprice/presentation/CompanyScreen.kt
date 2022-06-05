@@ -19,7 +19,6 @@ import com.ramcosta.composedestinations.annotation.Destination
 import com.ramcosta.composedestinations.annotation.RootNavGraph
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 
-
 @RootNavGraph(start = true)
 @Destination
 @Composable
@@ -39,9 +38,11 @@ fun CompanyScreen(
                 viewModel.onEvent(
                     CompanyEvent.OnSearchQueryChange(it)
                 )
-            }, modifier = Modifier
+            },
+            modifier = Modifier
                 .fillMaxWidth()
-                .padding(16.dp), placeholder = {
+                .padding(16.dp),
+            placeholder = {
                 Text(text = "Search...")
             }, maxLines = 1, singleLine = true
         )
