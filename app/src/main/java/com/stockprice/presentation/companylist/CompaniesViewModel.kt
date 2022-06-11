@@ -1,11 +1,11 @@
-package com.stockprice.presentation
+package com.stockprice.presentation.companylist
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.stockprice.domain.model.CompanyState
+import com.stockprice.presentation.companylist.ui.CompanyListState
 import com.stockprice.domain.repository.StockRepository
 import com.stockprice.utils.Response
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -19,7 +19,7 @@ class CompaniesViewModel @Inject constructor(
     private val repository: StockRepository
 ) : ViewModel() {
 
-    var state by mutableStateOf(CompanyState())
+    var state by mutableStateOf(CompanyListState())
     private var searchJob: Job? = null
 
     init {

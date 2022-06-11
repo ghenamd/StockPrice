@@ -20,5 +20,5 @@ interface StockApi {
     suspend fun getCompanyInfo(
         @Query("symbol") symbol: String,
         @Query("apikey") apiKey: String = API_KEY,
-    ): List<CompanyInfoDto>
+    ): CompanyInfoDto
 }

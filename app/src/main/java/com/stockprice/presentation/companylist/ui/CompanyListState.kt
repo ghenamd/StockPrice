@@ -1,6 +1,8 @@
-package com.stockprice.domain.model
+package com.stockprice.presentation.companylist.ui
 
-data class CompanyState(
+import com.stockprice.domain.model.Company
+
+data class CompanyListState(
     val companies: List<Company> = emptyList(),
     val isLoading: Boolean = false,
     val isRefreshing: Boolean = false,

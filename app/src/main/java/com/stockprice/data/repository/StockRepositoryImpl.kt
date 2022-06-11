@@ -3,7 +3,7 @@ package com.stockprice.data.repository
 import com.stockprice.data.csv.CSVParser
 import com.stockprice.data.local.StockDatabase
 import com.stockprice.data.mapper.CompanyInfoMapper
-import com.stockprice.data.mapper.CompanyMapper
+import com.stockprice.data.mapper.CompanyListMapper
 import com.stockprice.data.remote.StockApi
 import com.stockprice.domain.model.Company
 import com.stockprice.domain.model.CompanyInfo
@@ -19,7 +19,7 @@ import javax.inject.Singleton
 class StockRepositoryImpl @Inject constructor(
     private val api: StockApi,
     private val db: StockDatabase,
-    private val companyMapper: CompanyMapper,
+    private val companyListMapper: CompanyListMapper,
     private val companyInfoMapper: CompanyInfoMapper,
     private val parser: CSVParser
 ) : StockRepository {
@@ -32,7 +32,7 @@ class StockRepositoryImpl @Inject constructor(
             emit(Response.Loading(isLoading = true))
             val companies = db.dao.searchCompanies(query = query)
             emit(Response.Loading(isLoading = false))
-            emit(Response.Success(data = companyMapper.toCompanies(companies)))
+            emit(Response.Success(data = companyListMapper.toCompanies(companies)))
             if (companies.isNotEmpty() && !fetchRemotely) return@flow
 
             val remoteCompanies = try {
@@ -49,7 +49,7 @@ class StockRepositoryImpl @Inject constructor(
                 emit(Response.Loading(isLoading = false))
                 emit(Response.Success(data = it))
                 db.dao.clearDb()
-                db.dao.insertCompanies(companyMapper.toEntity(it))
+                db.dao.insertCompanies(companyListMapper.toEntity(it))
             }
         }
     }
@@ -65,7 +65,7 @@ class StockRepositoryImpl @Inject constructor(
         }
     }
 
-    override suspend fun getCompanyInfo(symbol: String): Response<List<CompanyInfo>> {
+    override suspend fun getCompanyInfo(symbol: String): Response<CompanyInfo> {
         return try {
             val response = api.getCompanyInfo(symbol)
             Response.Success(data = companyInfoMapper.toCompanyInfo(response))

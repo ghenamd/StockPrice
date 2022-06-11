@@ -3,7 +3,6 @@ package com.stockprice.di
 import com.stockprice.data.csv.CSVParser
 import com.stockprice.data.csv.CSVParserImpl
 import com.stockprice.data.repository.StockRepositoryImpl
-import com.stockprice.domain.model.Company
 import com.stockprice.domain.repository.StockRepository
 import dagger.Binds
 import dagger.Module

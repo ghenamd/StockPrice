@@ -27,15 +27,13 @@ class CompanyInfoMapper @Inject constructor() {
         }
     }
 
-    fun toCompanyInfo(list: List<CompanyInfoDto>): List<CompanyInfo> {
-        return list.map {
-            CompanyInfo(
-                symbol = it.symbol,
-                description = it.description,
-                name = it.name,
-                country = it.country,
-                industry = it.industry
-            )
-        }
+    fun toCompanyInfo(dto: CompanyInfoDto): CompanyInfo {
+        return CompanyInfo(
+            symbol = dto.symbol,
+            description = dto.description,
+            name = dto.name,
+            country = dto.country,
+            industry = dto.industry
+        )
     }
 }

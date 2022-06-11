@@ -1,4 +1,4 @@
-package com.stockprice.presentation
+package com.stockprice.presentation.companylist
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.MaterialTheme

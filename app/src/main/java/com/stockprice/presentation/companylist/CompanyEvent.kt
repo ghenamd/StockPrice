@@ -1,4 +1,4 @@
-package com.stockprice.presentation
+package com.stockprice.presentation.companylist
 
 sealed class CompanyEvent {
     object Refresh : CompanyEvent()
