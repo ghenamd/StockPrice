@@ -18,5 +18,5 @@ abstract class RepositoryModule {
     abstract fun bindsStockRepository(impl: StockRepositoryImpl): StockRepository
 
     @Binds
-    abstract fun bindsCsvParser(impl: CSVParserImpl): CSVParser<Company>
+    abstract fun bindsCsvParser(impl: CSVParserImpl): CSVParser
 }
