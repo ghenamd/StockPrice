@@ -10,7 +10,7 @@ import androidx.compose.ui.Modifier
 import com.google.accompanist.systemuicontroller.SystemUiController
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import com.ramcosta.composedestinations.DestinationsNavHost
-import com.stockprice.presentation.NavGraphs
+import com.stockprice.presentation.companylist.ui.NavGraphs
 import com.stockprice.ui.theme.DarkBlue
 import com.stockprice.ui.theme.StockPriceTheme
 import dagger.hilt.android.AndroidEntryPoint

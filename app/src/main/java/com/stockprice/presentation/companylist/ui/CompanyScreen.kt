@@ -1,4 +1,4 @@
-package com.stockprice.presentation
+package com.stockprice.presentation.companylist.ui
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
@@ -56,7 +56,7 @@ fun CompanyScreen(
             LazyColumn(modifier = Modifier.fillMaxSize()) {
                 items(state.companies.size) { position ->
                     CompanyItem(
-                        company = state.companies[position],
+                        company = state.companies[position], // todo change
                         modifier = Modifier
                             .fillMaxWidth()
                             .clickable {
