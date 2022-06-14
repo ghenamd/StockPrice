@@ -7,5 +7,5 @@ data class CompanyInfoState(
     val stockInfo: List<IntraDayInfo> = emptyList(),
     val companyInfo: CompanyInfo? = null,
     val isLoading: Boolean = false,
-    val error: String? = ""
+    val error: String? = null
 )

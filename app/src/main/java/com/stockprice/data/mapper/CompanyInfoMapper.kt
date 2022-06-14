@@ -21,7 +21,7 @@ class CompanyInfoMapper @Inject constructor() {
                 close = it.close
             )
         }.filter {
-            it.date.dayOfMonth == LocalDateTime.now().minusDays(1).dayOfMonth
+            it.date.dayOfMonth == LocalDateTime.now().minusDays(4).dayOfMonth
         }.sortedBy {
             it.date.hour
         }

@@ -21,6 +21,7 @@ import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 import com.stockprice.presentation.companylist.CompaniesViewModel
 import com.stockprice.presentation.companylist.CompanyEvent
 import com.stockprice.presentation.companylist.CompanyItem
+import com.stockprice.presentation.destinations.CompanyInfoScreenDestination
 
 @RootNavGraph(start = true)
 @Destination
@@ -55,12 +56,13 @@ fun CompanyScreen(
         }) {
             LazyColumn(modifier = Modifier.fillMaxSize()) {
                 items(state.companies.size) { position ->
+                    val company = state.companies[position]
                     CompanyItem(
-                        company = state.companies[position], // todo change
+                        company = company,
                         modifier = Modifier
                             .fillMaxWidth()
                             .clickable {
-                                // TODO
+                                navigator.navigate(CompanyInfoScreenDestination(symbol = company.symbol))
                             }
                             .padding(16.dp)
                     )
